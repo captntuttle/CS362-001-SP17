@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+Test set: Queue_ESTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 3, Errors: 1, Skipped: 0, Time elapsed: 0.551 sec <<< FAILURE! - in Queue_ESTest
+test3(Queue_ESTest)  Time elapsed: 0.021 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<1>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at Queue_ESTest.test3(Queue_ESTest.java:45)
+
+test5(Queue_ESTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<1>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at Queue_ESTest.test5(Queue_ESTest.java:61)
+
+test4(Queue_ESTest)  Time elapsed: 0.004 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<1>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at Queue_ESTest.test4(Queue_ESTest.java:54)
+
+test1(Queue_ESTest)  Time elapsed: 0.006 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at Queue$Node.access$100(Queue.java:16)
+	at Queue.front(Queue.java:81)
+	at Queue_ESTest.test1(Queue_ESTest.java:28)
+
