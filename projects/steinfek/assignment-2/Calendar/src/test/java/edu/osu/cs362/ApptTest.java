@@ -37,6 +37,58 @@ public class ApptTest {
 		 assertEquals(2017, appt.getStartYear());
 		 assertEquals("Birthday Party", appt.getTitle());
 		 assertEquals("This is my birthday party.", appt.getDescription());         		
+
+
+		 appt.setStartMonth(13);
+		 assertFalse(appt.getValid());
+		 appt.setStartMonth(0);
+		 assertFalse(appt.getValid());
+		 appt.setStartDay(32);
+		 assertFalse(appt.getValid());
+		 appt.setStartDay(0);
+		 assertFalse(appt.getValid());
+		 appt.setStartMinute(-1);
+		 assertFalse(appt.getValid());
+		 appt.setStartMinute(60);
+		 assertFalse(appt.getValid());
+		 appt.setStartHour(-1);
+		 assertFalse(appt.getValid());
+		 appt.setStartHour(24);
+		 assertFalse(appt.getValid());
+		 appt.setStartYear(2007);
+		 assertEquals(2007, appt.getStartYear());
+		 appt.setTitle("test title");
+		 assertEquals("test title", appt.getTitle());
+		 appt.setTitle(null);
+		 assertEquals("", appt.getTitle());
+		 appt.setDescription("test description");
+		 assertEquals("test description", appt.getDescription());
+		 appt.setDescription(null);
+		 assertEquals("", appt.getDescription());
+		 
+	 }
+	 public void test02() throws Throwable{
+		 int startHour = 13;
+		 int startMinute = 30;
+		 int startDay = 20;
+		 int startMonth = 4;
+		 int startYear = 2017;
+
+		 String title = "test title";
+		 String description = "test2";
+		 
+		 Appt appt = new Appt(startHour,
+				 startMinute,
+				 startDay,
+				 startMonth,
+				 startYear,
+				 title,
+				 description);
+
+	//assertions
+		assertTrue(appt.getValid());
+		appt.setStartMonth(13);
+		assertFalse(appt.getValid());
 	 }
 
 
