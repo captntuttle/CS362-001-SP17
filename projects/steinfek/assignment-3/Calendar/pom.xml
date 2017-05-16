@@ -82,20 +82,14 @@
   			    <param>edu.osu.cs362.ApptTest</param>
   			    <param>edu.osu.cs362.CalDayTest</param>
   			    <param>edu.osu.cs362.TimeTableTest</param>
+  			    <param>edu.osu.cs362.Appt_ESTest</param>
+  			    <param>edu.osu.cs362.CalDay_ESTest</param>
+  			    <param>edu.osu.cs362.TimeTable_ESTest</param>
   			</targetTests>
   			<avoidCallsTo><!--A List of packages, classes and methods which are to be considered outside the scope of mutation.-->
       				<avoidCallsTo>java.io.PrintStream</avoidCallsTo>
   			</avoidCallsTo>
       </configuration>
-    </plugin>
-    <plugin>
-        <groupId>org.evosuite.plugins</groupId>
-        <artifactId>evosuite-maven-plugin</artifactId>
-        <version>${evosuiteVersion}</version>
-        <executions><execution>
-           <goals> <goal> prepare </goal> </goals>
-           <phase> process-test-classes </phase>
-        </execution></executions>
     </plugin>
     <plugin>
      <groupId>org.apache.maven.plugins</groupId>

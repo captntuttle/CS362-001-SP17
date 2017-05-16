@@ -17,18 +17,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Locale;
 import java.util.TimeZone;
-import org.evosuite.runtime.EvoRunner;
-import org.evosuite.runtime.EvoRunnerParameters;
-import org.evosuite.runtime.mock.java.util.MockGregorianCalendar;
-import org.junit.runner.RunWith;
+
 import sun.util.calendar.ZoneInfo;
 
-@RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true, separateClassLoader = true) 
-public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
+public class CalDay_ESTest  {
 
   @Test(timeout = 4000)
   public void test00()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar();
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar();
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       Appt appt0 = new Appt(2, 2, 2, 2, 2, "m,", "m,");
       calDay0.addAppt(appt0);
@@ -37,7 +33,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
 
   @Test(timeout = 4000)
   public void test01()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar();
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar();
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       calDay0.iterator();
   }
@@ -50,7 +46,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
 
   @Test(timeout = 4000)
   public void test03()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar(0, 0, 0, 0, 37, 0);
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar(0, 0, 0, 0, 37, 0);
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       calDay0.getYear();
   }
@@ -59,7 +55,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
   public void test04()  throws Throwable  {
       ZoneInfo zoneInfo0 = (ZoneInfo)TimeZone.getDefault();
       Locale locale0 = new Locale("Jz~KuW");
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar((TimeZone) zoneInfo0, locale0);
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar((TimeZone) zoneInfo0, locale0);
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       calDay0.year = (-1);
       calDay0.getYear();
@@ -67,7 +63,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
 
   @Test(timeout = 4000)
   public void test05()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar();
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar();
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       calDay0.getSizeAppts();
   }
@@ -91,7 +87,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
 
   @Test(timeout = 4000)
   public void test08()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar(0, 1897, 0);
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar(0, 1897, 0);
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       calDay0.month = (-2883);
       calDay0.getMonth();
@@ -113,7 +109,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
 
   @Test(timeout = 4000)
   public void test11()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar(0, 0, 0, 0, 1839);
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar(0, 0, 0, 0, 1839);
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       calDay0.getAppts();
   }
@@ -130,7 +126,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
 
   @Test(timeout = 4000)
   public void test13()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar(0, 1897, 0);
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar(0, 1897, 0);
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       calDay0.appts = null;
       // Undeclared exception!
@@ -142,7 +138,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
          //
          // no message in exception (getMessage() returned null)
          //
-         assertThrownBy("edu.osu.cs362.CalDay", e);
+         //assertThrownBy("edu.osu.cs362.CalDay", e);
       }
   }
 
@@ -157,7 +153,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
          //
          // no message in exception (getMessage() returned null)
          //
-         assertThrownBy("edu.osu.cs362.CalDay", e);
+         //assertThrownBy("edu.osu.cs362.CalDay", e);
       }
   }
 
@@ -165,7 +161,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
   public void test15()  throws Throwable  {
       ZoneOffset zoneOffset0 = ZoneOffset.ofHours(5);
       ZoneInfo zoneInfo0 = (ZoneInfo)TimeZone.getTimeZone((ZoneId) zoneOffset0);
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar((TimeZone) zoneInfo0);
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar((TimeZone) zoneInfo0);
       mockGregorianCalendar0.set(0, 66);
       CalDay calDay0 = null;
       try {
@@ -176,7 +172,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
          //
          // Invalid era
          //
-         assertThrownBy("java.util.GregorianCalendar", e);
+         //assertThrownBy("java.util.GregorianCalendar", e);
       }
   }
 
@@ -208,14 +204,14 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
   public void test20()  throws Throwable  {
       ZoneInfo zoneInfo0 = (ZoneInfo)TimeZone.getDefault();
       Locale locale0 = new Locale("Jz~KuW");
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar((TimeZone) zoneInfo0, locale0);
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar((TimeZone) zoneInfo0, locale0);
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       calDay0.isValid();
   }
 
   @Test(timeout = 4000)
   public void test21()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar();
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar(2014,1,14);
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       Appt appt0 = new Appt(2, 2, 2, 2, 2, "m,", "m,");
       calDay0.addAppt(appt0);
@@ -232,7 +228,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
 
   @Test(timeout = 4000)
   public void test23()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar();
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar();
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       Appt appt0 = new Appt(2, 2, 2, 2, 2, "m,", "m,");
       calDay0.addAppt(appt0);
@@ -266,13 +262,13 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
          //
          // no message in exception (getMessage() returned null)
          //
-         assertThrownBy("edu.osu.cs362.CalDay", e);
+         //assertThrownBy("edu.osu.cs362.CalDay", e);
       }
   }
 
   @Test(timeout = 4000)
   public void test26()  throws Throwable  {
-      MockGregorianCalendar mockGregorianCalendar0 = new MockGregorianCalendar(0, 1897, 0);
+      GregorianCalendar mockGregorianCalendar0 = new GregorianCalendar(0, 1897, 0);
       CalDay calDay0 = new CalDay((GregorianCalendar) mockGregorianCalendar0);
       Appt appt0 = new Appt((-3772), 0, 0, 0, (-3772), " --- \n", "");
       calDay0.addAppt(appt0);
@@ -295,7 +291,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
          //
          // no message in exception (getMessage() returned null)
          //
-         assertThrownBy("edu.osu.cs362.CalDay", e);
+         //assertThrownBy("edu.osu.cs362.CalDay", e);
       }
   }
 
@@ -312,7 +308,7 @@ public class CalDay_ESTest extends CalDay_ESTest_scaffolding {
          //
          // no message in exception (getMessage() returned null)
          //
-         assertThrownBy("edu.osu.cs362.CalDay", e);
+         //assertThrownBy("edu.osu.cs362.CalDay", e);
       }
   }
 
